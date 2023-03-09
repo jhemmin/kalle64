@@ -1,0 +1,6 @@
+[submodule "bastext"]
+	path = bastext
+	url = https://github.com/nafmo/bastext.git
+[submodule "cbmbasic"]
+	path = cbmbasic
+	url = https://github.com/mist64/cbmbasic.git
