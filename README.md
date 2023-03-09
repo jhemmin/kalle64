@@ -23,3 +23,9 @@ From container. Note that download script does not work anymore.
 
 Tape archive contains two version so text editor was used to separate them
 to files `kalle-v1.bas` and `kalle-v2.bas`.
+
+## Execute inside the container
+
+```bash
+./cbmbasic src/kalle-v1.bas
+```
