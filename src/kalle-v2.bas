@@ -1,264 +1,264 @@
 170 GOTO380
 190 GOTO320
-200 IFl$=" loppu "THEN270
+200 IFL$=" LOPPU "THEN270
 220 GOSUB830
 230 GOTO1600
 240 GOTO760
 260 GOSUB640
 270 GOTO640
 280 END
-320 PRINT"{blue}":INPUTvck$:IFvck$=""THEN320
-321 l$=vck$
-330 l$=" "+l$+" ":GOTO200
-380 ks=17:kp=2:am=40:lm=6:sm=6
-385 PRINT"{clear}{down*9}{right*6}hetki{.*3}"
-390 DEFFNs(s)=INT(RND(1)*s)+1
-400 DIMks$(ks,1),kp$(kp,1),mv$(5),mv%(5),li$(30),sn$(am,sm),lm$(am,lm),ae%(am)
-420 FORi=1TOks:READks$(i,0),ks$(i,1):NEXT
-430 DATAmin[,sin[,sin[,min[,me,te,minun,sinun,sinun,minun,meid[n,teid[n,sinut,minut
-431 DATAmeid[t,teid[t,sinua,minua,minua,sinua,olen,olet,olet,olen,minulle,sinulle
-440 DATAsinulle,minulle,minut,sinut,teid[t,meid[t,olemme,olette
-460 FORi=1TOkp:READkp$(i,0),kp$(i,1):NEXT
-470 DATAmi,si,si,ni
-490 FORi=0TOam:READas$:IFas$="l"THENam=i-1:GOTO560
+320 PRINT"{BLUE}":INPUTVCK$:IFVCK$=""THEN320
+321 L$=VCK$
+330 L$=" "+L$+" ":GOTO200
+380 KS=17:KP=2:AM=40:LM=6:SM=6
+385 PRINT"{CLEAR}{DOWN*9}{RIGHT*6}HETKI{.*3}"
+390 DEFFNS(S)=INT(RND(1)*S)+1
+400 DIMKS$(KS,1),KP$(KP,1),MV$(5),MV%(5),LI$(30),SN$(AM,SM),LM$(AM,LM),AE%(AM)
+420 FORI=1TOKS:READKS$(I,0),KS$(I,1):NEXT
+430 DATAMIN[,SIN[,SIN[,MIN[,ME,TE,MINUN,SINUN,SINUN,MINUN,MEID[N,TEID[N,SINUT,MINUT
+431 DATAMEID[T,TEID[T,SINUA,MINUA,MINUA,SINUA,OLEN,OLET,OLET,OLEN,MINULLE,SINULLE
+440 DATASINULLE,MINULLE,MINUT,SINUT,TEID[T,MEID[T,OLEMME,OLETTE
+460 FORI=1TOKP:READKP$(I,0),KP$(I,1):NEXT
+470 DATAMI,SI,SI,NI
+490 FORI=0TOAM:READAS$:IFAS$="L"THENAM=I-1:GOTO560
 500 GOSUB1360
-510 FORj=1TOlm+1:READl$:IFl$="@"THENlm$(i,0)=STR$(j-1)+"*"+STR$(FNs(j)-1):GOTO540
-520 lm$(i,j)=l$
-530 NEXTj
-540 NEXTi:RESTORE
+510 FORJ=1TOLM+1:READL$:IFL$="@"THENLM$(I,0)=STR$(J-1)+"*"+STR$(FNS(J)-1):GOTO540
+520 LM$(I,J)=L$
+530 NEXTJ
+540 NEXTI:RESTORE
 560 REM
-580 PRINT"no niin, rentouduhan niin aloitamme istunnon. jos kuitenkin antaisit";
-581 PRINT" nimesi t[nne rekisteriin":INPUTn$
-582 PRINT"{down}hienoa "n$", kerrohan nyt mik[ on ongelmasi"
+580 PRINT"NO NIIN, RENTOUDUHAN NIIN ALOITAMME ISTUNNON. JOS KUITENKIN ANTAISIT";
+581 PRINT" NIMESI T[NNE REKISTERIIN":INPUTN$
+582 PRINT"{DOWN}HIENOA "N$", KERROHAN NYT MIK[ ON ONGELMASI"
 583 PRINT:GOTO190
-640 k=0
-650 PRINT"{clear}k e s k u s t e l u n{space*7}a i h e e t":PRINT
+640 K=0
+650 PRINT"{CLEAR}K E S K U S T E L U N{SPACE*7}A I H E E T":PRINT
 655 REM
-660 FORi=0TO19:IFi+k>amTHEN720
-670 PRINTi+k"..";LEFT$(sn$(i+k,1),10);
-690 FORj=0TOae%(i+k):PRINT"+";:NEXT
-700 PRINTae%(i+k)
-710 NEXT:PRINT:PRINT"jatka{.*3}";:k=i
-715 GETa$:IFa$<>""THEN650
+660 FORI=0TO19:IFI+K>AMTHEN720
+670 PRINTI+K"..";LEFT$(SN$(I+K,1),10);
+690 FORJ=0TOAE%(I+K):PRINT"+";:NEXT
+700 PRINTAE%(I+K)
+710 NEXT:PRINT:PRINT"JATKA{.*3}";:K=I
+715 GETA$:IFA$<>""THEN650
 717 GOTO715
-720 PRINT"kiitos keskustelusta ja hyv[[ jatkoa":END
-760 IFNOT(lopussa$="koodi")THENli$=""
+720 PRINT"KIITOS KESKUSTELUSTA JA HYV[[ JATKOA":END
+760 IFNOT(LOPUSSA$="KOODI")THENLI$=""
 770 REM
-771 PRINT"-";va$;li$
-780 va$="":li$="":GOTO190
+771 PRINT"-";VA$;LI$
+780 VA$="":LI$="":GOTO190
 830 GOTO1900
-840 IFts$="on"THEN870
+840 IFTS$="ON"THEN870
 850 GOSUB1230
-860 IFa$="avain ei"THENGOSUB1700:GOSUB1490:GOTO890
+860 IFA$="AVAIN EI"THENGOSUB1700:GOSUB1490:GOTO890
 870 GOSUB1490
 880 GOSUB930
 890 RETURN
 930 GOSUB1060
-940 IFli$=" "THEN970
-950 ll$=LEFT$(li$,LEN(li$)-1):GOSUB1110
+940 IFLI$=" "THEN970
+950 LL$=LEFT$(LI$,LEN(LI$)-1):GOSUB1110
 970 RETURN
-990 FORi=1TOb
-1000 FORj=1TOks:IFli$(i)=ks$(j,0)THENli$(i)=ks$(j,1):GOTO1020
-1010 NEXTj
-1020 FORk=1TOkp
-1021 s$=kp$(k,0)
-1022 IFRIGHT$(li$(i),LEN(s$))=s$THENvcr=1
-1023 IFvcr=1THENli$(i)=LEFT$(li$(i),LEN(li$(i))-LEN(s$))+kp$(k,1):vcr=0:GOTO1040
-1030 NEXTk
-1040 NEXTi:RETURN
-1050 li$="":FORi=1TOb:li$=li$+" "+li$(i):NEXT:RETURN
-1060 ll$="":li$=RIGHT$(l$,LEN(l$)-l)+" "
-1070 FORi=1TOLEN(li$):IFMID$(li$,i,1)=" "THENli$=RIGHT$(li$,LEN(li$)-i):GOTO1090
+990 FORI=1TOB
+1000 FORJ=1TOKS:IFLI$(I)=KS$(J,0)THENLI$(I)=KS$(J,1):GOTO1020
+1010 NEXTJ
+1020 FORK=1TOKP
+1021 S$=KP$(K,0)
+1022 IFRIGHT$(LI$(I),LEN(S$))=S$THENVCR=1
+1023 IFVCR=1THENLI$(I)=LEFT$(LI$(I),LEN(LI$(I))-LEN(S$))+KP$(K,1):VCR=0:GOTO1040
+1030 NEXTK
+1040 NEXTI:RETURN
+1050 LI$="":FORI=1TOB:LI$=LI$+" "+LI$(I):NEXT:RETURN
+1060 LL$="":LI$=RIGHT$(L$,LEN(L$)-L)+" "
+1070 FORI=1TOLEN(LI$):IFMID$(LI$,I,1)=" "THENLI$=RIGHT$(LI$,LEN(LI$)-I):GOTO1090
 1080 NEXT
 1090 RETURN
 1110 GOSUB1160
 1120 GOSUB990
 1130 GOSUB1050
 1140 RETURN
-1160 IFli$=""THENli$=" "
-1161 a$=LEFT$(li$,LEN(li$)-1):b=0
-1170 FORi=1TO10:li$(i)="":NEXT
-1180 b=b+1:FORi=1TOLEN(a$)
-1181 IFMID$(a$,i,1)=" "THENli$(b)=LEFT$(a$,i-1):vcc=1
-1182 IFvcc=1THENa$=MID$(a$,i+1,LEN(a$)-LEN(li$(b))-1):vcc=0:GOTO1180
+1160 IFLI$=""THENLI$=" "
+1161 A$=LEFT$(LI$,LEN(LI$)-1):B=0
+1170 FORI=1TO10:LI$(I)="":NEXT
+1180 B=B+1:FORI=1TOLEN(A$)
+1181 IFMID$(A$,I,1)=" "THENLI$(B)=LEFT$(A$,I-1):VCC=1
+1182 IFVCC=1THENA$=MID$(A$,I+1,LEN(A$)-LEN(LI$(B))-1):VCC=0:GOTO1180
 1190 NEXT:RETURN
-1230 a$="avain ei"
-1250 FORi=2TOam
-1270 FORj=1TOVAL(sn$(i,0))
-1290 FORl=1TOLEN(l$)-LEN(sn$(i,j))+1
-1300 IFsn$(i,j)=MID$(l$,l,LEN(sn$(i,j)))THENas$=sn$(i,j):a$="avain on":a=i:as=a:GOTO1320
-1310 NEXTl,j,i
+1230 A$="AVAIN EI"
+1250 FORI=2TOAM
+1270 FORJ=1TOVAL(SN$(I,0))
+1290 FORL=1TOLEN(L$)-LEN(SN$(I,J))+1
+1300 IFSN$(I,J)=MID$(L$,L,LEN(SN$(I,J)))THENAS$=SN$(I,J):A$="AVAIN ON":A=I:AS=A:GOTO1320
+1310 NEXTL,J,I
 1320 RETURN
-1360 a$=" "+as$+"*":a=0
-1370 a=a+1:FORl=1TOLEN(a$)
-1371 IFMID$(a$,l,1)="*"THENsn$(i,a)=LEFT$(a$,l-1):vvc=1
-1372 IFvvc=1THENa$=MID$(a$,l+1,LEN(a$)-LEN(sn$(i,a))-1):vvc=0:GOTO1370
+1360 A$=" "+AS$+"*":A=0
+1370 A=A+1:FORL=1TOLEN(A$)
+1371 IFMID$(A$,L,1)="*"THENSN$(I,A)=LEFT$(A$,L-1):VVC=1
+1372 IFVVC=1THENA$=MID$(A$,L+1,LEN(A$)-LEN(SN$(I,A))-1):VVC=0:GOTO1370
 1380 NEXT
-1400 FORl=1TOa
-1401 IFRIGHT$(sn$(i,l),1)="-"THENsn$(i,l)=LEFT$(sn$(i,l),LEN(sn$(i,l))-1):GOTO1420
-1410 sn$(i,l)=sn$(i,l)+" "
-1420 sn$(i,l)=" "+sn$(i,l)
+1400 FORL=1TOA
+1401 IFRIGHT$(SN$(I,L),1)="-"THENSN$(I,L)=LEFT$(SN$(I,L),LEN(SN$(I,L))-1):GOTO1420
+1410 SN$(I,L)=SN$(I,L)+" "
+1420 SN$(I,L)=" "+SN$(I,L)
 1430 NEXT
-1440 sn$(i,1)=RIGHT$(sn$(i,1),LEN(sn$(i,1))-1)
-1450 sn$(i,0)=STR$(a-1):RETURN
-1490 lopussa$=""
-1500 ho=VAL(RIGHT$(lm$(a,0),1)):hm=VAL(LEFT$(lm$(a,0),2))
-1510 ho=ho+1:IFho>hmTHENho=1
-1520 lm$(a,0)=STR$(hm)+"*"+STR$(ho)
-1530 v$=lm$(a,ho):va$=v$
-1540 IFRIGHT$(v$,1)="="THENva$=LEFT$(v$,LEN(v$)-1):lopussa$="koodi"
-1550 ae%(a)=ae%(a)+1
+1440 SN$(I,1)=RIGHT$(SN$(I,1),LEN(SN$(I,1))-1)
+1450 SN$(I,0)=STR$(A-1):RETURN
+1490 LOPUSSA$=""
+1500 HO=VAL(RIGHT$(LM$(A,0),1)):HM=VAL(LEFT$(LM$(A,0),2))
+1510 HO=HO+1:IFHO>HMTHENHO=1
+1520 LM$(A,0)=STR$(HM)+"*"+STR$(HO)
+1530 V$=LM$(A,HO):VA$=V$
+1540 IFRIGHT$(V$,1)="="THENVA$=LEFT$(V$,LEN(V$)-1):LOPUSSA$="KOODI"
+1550 AE%(A)=AE%(A)+1
 1560 RETURN
-1600 IFmv%(1)=asORas<2THEN1650
-1610 sy=sy+1
-1620 FORi=5TO1STEP-1:mv%(i)=mv%(i-1):mv$(i)=mv$(i-1):NEXT
-1630 mv%(1)=as:as=0
-1640 mv$(1)=ll$:ll$=""
+1600 IFMV%(1)=ASORAS<2THEN1650
+1610 SY=SY+1
+1620 FORI=5TO1STEP-1:MV%(I)=MV%(I-1):MV$(I)=MV$(I-1):NEXT
+1630 MV%(1)=AS:AS=0
+1640 MV$(1)=LL$:LL$=""
 1650 GOTO240
-1700 lv=lv+1:IFlv>2THENlv=1
-1710 ONlvGOTO1730,1770
-1730 a=mv%(1):IFa=0THEN1700
-1740 IFmv$(1)=""THENli$="":GOSUB1850:GOSUB1110
-1750 li$=mv$(1)+" ":GOSUB1850:GOSUB1110:GOTO1810
-1770 IFmv$(1)=""THENa=1:GOTO1810
-1780 l$=" "+mv$(1):li$=mv$(1)+" ":GOSUB1850:GOSUB1110
+1700 LV=LV+1:IFLV>2THENLV=1
+1710 ONLVGOTO1730,1770
+1730 A=MV%(1):IFA=0THEN1700
+1740 IFMV$(1)=""THENLI$="":GOSUB1850:GOSUB1110
+1750 LI$=MV$(1)+" ":GOSUB1850:GOSUB1110:GOTO1810
+1770 IFMV$(1)=""THENA=1:GOTO1810
+1780 L$=" "+MV$(1):LI$=MV$(1)+" ":GOSUB1850:GOSUB1110
 1790 GOSUB1230
-1800 IFa$="avain ei"THEN1700
-1810 l=0:RETURN
-1850 FORi=1TO4:mv$(i)=mv$(i+1):mv%(i)=mv%(i+1):NEXT:mv$(5)="":mv%(5)=0:sy=sy-1:RETURN
-1900 ts$="":IFl$=el$THENa=0:ts$="on"
-1910 el$=l$:GOTO840
-1960 DATA jos toistoa
-1970 DATA [l[ toista itse[si!,sanoit tuon jo kerran!,[l[ viitsi jankuttaa!
-1971 DATAkeksi jotain muuta.,etk{pound} keksi muuta.,@
-1980 DATA ei avainta
-1990 DATA onko sinulla psykologisia ongelmia?,mit[ tuo sinulle mieleen,ym[rr[n...
-1991 DATAen ymm[rr[ sinua aivan t[ysin.,voitko hiukan t[sment[[ ajatuksiasi.
-1992 DATAtuohan on mielen kiintoista.,@
-2000 DATA voit-*osaat-
-2010 DATA etk{pound} usko ett[ osaan=,ehk[ sin[ haluaisit=,haluat siis minun voivan=,@
-2020 DATAvoin-*osaan-
-2030 DATA ehket halua=,haluaisitko todella=,@
-2040 DATA olet-
-2050 DATA miksi en olisi=,miellytt[[k{pound} sinua ett[ olen=,n[et minussa vain haavekuvasi
-2051 DATA -ehk[ jotakin lapsuudestasi?,toivoisitko olevasi=,joskus unet tulevat tosiksi
+1800 IFA$="AVAIN EI"THEN1700
+1810 L=0:RETURN
+1850 FORI=1TO4:MV$(I)=MV$(I+1):MV%(I)=MV%(I+1):NEXT:MV$(5)="":MV%(5)=0:SY=SY-1:RETURN
+1900 TS$="":IFL$=EL$THENA=0:TS$="ON"
+1910 EL$=L$:GOTO840
+1960 DATA JOS TOISTOA
+1970 DATA [L[ TOISTA ITSE[SI!,SANOIT TUON JO KERRAN!,[L[ VIITSI JANKUTTAA!
+1971 DATAKEKSI JOTAIN MUUTA.,ETK{POUND} KEKSI MUUTA.,@
+1980 DATA EI AVAINTA
+1990 DATA ONKO SINULLA PSYKOLOGISIA ONGELMIA?,MIT[ TUO SINULLE MIELEEN,YM[RR[N...
+1991 DATAEN YMM[RR[ SINUA AIVAN T[YSIN.,VOITKO HIUKAN T[SMENT[[ AJATUKSIASI.
+1992 DATATUOHAN ON MIELEN KIINTOISTA.,@
+2000 DATA VOIT-*OSAAT-
+2010 DATA ETK{POUND} USKO ETT[ OSAAN=,EHK[ SIN[ HALUAISIT=,HALUAT SIIS MINUN VOIVAN=,@
+2020 DATAVOIN-*OSAAN-
+2030 DATA EHKET HALUA=,HALUAISITKO TODELLA=,@
+2040 DATA OLET-
+2050 DATA MIKSI EN OLISI=,MIELLYTT[[K{POUND} SINUA ETT[ OLEN=,N[ET MINUSSA VAIN HAAVEKUVASI
+2051 DATA -EHK[ JOTAKIN LAPSUUDESTASI?,TOIVOISITKO OLEVASI=,JOSKUS UNET TULEVAT TOSIKSI
 2052 DATA@
-2060 DATA en*min[ en
-2070 DATA etk{pound} todellakaan=,miksi et=,hmm...kerrohan jotakin haluistasi
-2071 DATAh[iritseek{pound} ettet=,voitko kuvitella muuta kuin ettet=,@
-2080 DATA miksi*miksei
-2090 DATA mit[ ajattelet kysyess[si tuollaisia?
-2091 DATA syv[llisiin kysymyksiin on syv[lliset vastaukset -jatka,miksi yleens[ mit[[n.
-2092 DATA niin todellakin -miksi=,olet perinpohjainen luonne,@
-2100 DATA oletko
-2110 DATA miksi sinua kiinostaa olenko vai enk{pound} ole=,olisiko parempi  etten olisi=,@
-2120 DATA viha-
-2130 DATA vihantunne juontaa usein juurensa lapsuustraumoista.
-2131 DATAvihaaminen on hy{pound}dyt{pound}nt[ energian tuhlausta.,vihaatko itse[si?
-2132 DATAvihaatko sukulaisiasi?,vihan voi k[[nt[[ rakkaudeksi.,@
-2140 DATA huuta-*nalkut-*r[yh[-
-2150 DATA on t[rkeint[ ett[ osaa purkaa tunteensa,hmm...ehk[ hieman ep[hienoa k[yt{pound}st[
-2151 DATA siihen on varmaan omat syyns[...?,@
-2160 DATAryyp-*joi-*juo-*viina*alkoholi-
-2170 DATAalkoholin k[ytt{pound} haittaa yst[vyys suhteita
-2171 DATAmiten t[m[ liittyy muihin ongelmiisi?,pysy sin[ irti viinasta!
-2172 DATA miksi luulet ett[ ihmiset juovat?,@
-2180 DATApett[-*uskoton*vieraissa
-2190 DATAhairahduksia sattuu joskus meille kaikille
-2191 DATAteid[n olisi syyt[ keskustella ongelmistanne kesken[nne
-2192 DATAmist[ luulet uskottomuuden johtuvan?,mit[ tunnette toisianne kohtaan?,@
-2200 DATA pelk[-*pel[n-
-2210 DATA oetko kauankin pel[nnyt=,pelk[[tk{pound} juuri nyt=,pelko tuntuu kahlitsevan sinua.
-2211 DATAoletko yritt[nyt vapautunua peloistasi jotenkin?
-2212 DATAturha huolestua pelk[[minen on ihan tavallista.,@
-2220 DATA uskon
-2230 DATA uskon asioista ei kannata kiistell[,...uskot=,mist[ uskosi on per[isin
-2231 DATAkerrohan jotain rippi koulustasi,mit[ tunsit pastoriasi kohtaan?,@
-2240 DATA minusta tuntuu*tunnen
-2250 DATA kerrohan lis[[ tuntemuksistasi,tuntuukosinusta usein=,nautitko tuntemuksestasi
-2251 DATAaiheuttaako se sinulle syyllisyydentunteita?,tunteminen on t[rke[[,@
-2260 DATA rakast-
-2270 DATAeik{pound} tuo ole hiukan perverssi[?,tunnetko seksuaalista vetoa [itiisi?
-2271 DATAtaidat olla kokenutkin rakastaja.,mit[ rakasteleminen tuo sinulle mieleen?,@
-2280 DATAhalua-*himo-
-2290 DATA mit[ sinulle merkitsee jos saisit=,miksi haluat=
-2291 DATAoletetaanpa ett[ et koskaan saisi=,min[kin haluan joskus=,@
-2300 DATAuneks-*kuvit-*uni*kuvitelma*unta
-2310 DATAmit[ unesi tuo mieleesi?,uneksitko useinkin?,ket[ hahmoja unessasi esiintyy?
-2311 DATAh[iritsev[tk{pound} unesi sinua?,hienoa-unet parantavat,@
-2320 DATAmieheni*aviomieheni*vaimoni*naaraani
-2330 DATAmiksi h[n=,mit[ sinulle merkitsee ett[ h[n=,oletko pahoillasi ett[ h[n=
-2331 DATApett[[k{pound} h[n sinua?,kuvailisitko hiukan tarkemmin suhdettanne,@
-2360 DATAis[-*[iti-*mutsi-*faija-*vanhem-
-2370 DATAkerrohan lis[[ perheest[si,miten suhtuduit vanhempiisi murros i[ss[?
-2371 DATAmiten vanhenpasi suhtautuivat sinuun?
-2372 DATAongelmasi saattaa johtua vanhempiesi v[lisest[ suhteesta -jatka...,@
-2380 DATAsisko-*veli-*velje-*systeri-*broidi-
-2390 DATAvoitko t[sment[[ ajatuksiasi sisaruksistasi?
-2391 DATAkuinka usein tapaat sisaruksiasi?,miten sukulaiset suhtautuvat t[h[n?,@
-2400 DATAtytt{pound}yst[v[-*naise-
-2410 DATAkerrohan jostain haaveestasi,mit[ tytt{pound}yst[v[ merkitsee sinulle?
-2411 DATAmit[ kuvittelet juuri nyt?,pit[isik{pound} tytt{pound} yst[v[si muistuttaa [iti[si?
-2412 DATAkuvaile suhdettasi vastakkaiseen sukupuoleen,@
-2420 DATA poikayst[v[-*miesyst[v[-*miehe-
-2430 DATAkuvailisitko tarkemmin toiveitasi,mit[ poikayst[v[ merkitsee sinulle?
-2431 DATAmit[ kuvittelet juuri nyt?,pit[isik{pound} poikayst[v[si muistuttaa is[[si?
-2432 DATAkuvaile suhdettasi vastakkaiseen sukupuoleen,@
-2440 DATAyst[v-
-2450 DATA haluat ehk[ keskustella yst[vist[si?
-2451 DATAolet ehk[ etsiytynyt v[[r[nlaisten ihmisten pariin.
-2452 DATAkerrohan mit[ tunnet yst[vi[si kohtaan.
-2453 DATAtuo on hyvin tavallinen harhak[sitys ja se johtuu libidon harhaumasta.
-2455 DATA sinulla on liian ideaalinen kuva yst[vyydest[.,@
-2460 DATAsuku-
-2470 DATAmit[ ajattelet sukulaisistasi?,kerrohan jotakin lapsuudenmuistojasi.
-2471 DATAolen samaa mielt[ kanssasi.,tied[n -minullakin in sukulaisia.
-2472 DATApuhutaan v[lill[ jostakin muusta.,@
-2480 DATAtietokone-*kone
-2490 DATAhulestuttaako tietokoneet sinua?,pelk[[tk{pound} tietokoneen orjuuttavan ihmisi[?
-2491 DATApelottavatko koneet sinua?,miksi mainitsit koneet
-2492 DATAmit[ tekemist[ koneilla on ongelmasi kanssa?,@
-2500 DATAen voi*en osaa
-2510 DATAmist[ tied[t ettet osaa=,onko t[ss[ jotakin syvemp[[kin merkityst[?
-2511 DATAehk[ nyt osaat=,yritt[nytt[ ei laiteta,mit[ oikein haluat ilmaista?,@
-2520 DATA olen*min[ olen*olin*min[ olin
-2530 DATAtaisit tulla t[nne koska olet=,kuinka kauan olet ollut=
-2531 DATAsyyllisyyden tunteet ja pelot saattavat kalvaa pahasti
-2532 DATAonko sinusta normaalia olla=,mit[ vanhempasi sanoisivat siihen ett[ olet=,@
-2540 DATAsin[
-2550 DATAkeskustelimme sinusta emmek[ minusta,min[k{pound}=,eth[n vain puhu minusta?,@
-2560 DATA mit[
-2570 DATAmiksi kysyt?,kiinostaako tuo kysymys sinua?,mik[ vastaus olisi miellytt[vin?
-2571 DATA,mit[ luulet?,kerrohan jotakin nyt mit[ tulee mieleesi,@
-2580 DATAkuinka*mist[
-2590 DATAajatteletko eseinkin tuollaisia kysymyksi[?,mit[ sin[ oikeastaan haluat tiet[[?
-2591 DATAoletko kysynyt kelt[[n muulta?,oletko kysynyt sellaisia aikaisemminkin?
-2592 DATAmit[ tulee mieleesi kysyess[si tuollaisia?,@
-2600 DATAkuka
-2610 DATA nimet eiv[t kiinosta minua.,en v[lit[ mist[[n nimist[ -jatka.,@
-2620 DATA anteeksi*olen pahoillani
-2630 DATA[l[ turhaan pyytele anteeksi.,miksi olet niin vaatimaton?
-2631 DATAmit[ tuntemuksia sinulla on pyyt[ess[si anteeksi?,[l[ ole niin puolusteleva.
-2632 DATAmilt[ se tuntuu?,@
-2640 DATAehk[*ehk[p[*kenties*melko
-2650 DATAet vaikuta kovin varmalta.,miksi tuollainen s[vy?,etk{pound} voisi olla varmempi.
-2651 DATAetk{pound} ole varma?,etk{pound} tied[?,@
-2660 DATA ei
-2670 DATA asennoidut hiukan kielteisesti.,miksi muuten ei?,min[ en olisi yht[ varma.
-2671 DATA voisit koittaa suhtautua hiukan my{pound}nteisemmin.,totuus on tarua ihmeelisemp[[,@
-2680 DATA aina*joskus*usein
-2690 DATA voitko hiukan t[sment[[.,milloin?,mit[ ajat takaa?,ihan ainako?
-2691 DATA kaikki ei joskus suju niin kuin pit[isi.,@
-2700 DATA minun mielest[ni*mielest[ni
-2710 DATA oletko tosissasi sit[ mielt[,mielipiteet erottavat ihmisen el[imist[ -jatka.
-2711 DATA ep[iletk{pound} ett[=,sinulla on jyrkki[ mielipiteit[.,@
-2720 DATA samanlai-*samankaltai-
-2730 DATA mill[ tapaa?,mit[ yhteist[ havaitset?,mit[ samanlaisuus tuo mieleesi?
-2731 DATA mit[ muita yhteyksi[ huomaat?,tokkopa tuollaisia yhteyksi[ onkaan.,@
-2740 DATA kyll[*joo*jep*tietenkin
-2750 DATA vaikutat aika el[m[nmy{pound}nteiselt[.,oletko aivan varma ett[...=,ymm[rr[n.
-2751 DATA ...ahaa!,hmm...alkaa selvet[.,@
-2760 DATAl
-3000 FORi=1TOam:PRINT"avain "i:FORj=1TOsm:PRINTsn$(i,j)"/";:NEXT:PRINT
-3001 PRINT"{=*21}":PRINT"lause*pointeri="lm$(i,0):PRINT
-3010 FORj=1TOlm:PRINTj".."lm$(i,j):NEXT:PRINT:GETr$:NEXT
+2060 DATA EN*MIN[ EN
+2070 DATA ETK{POUND} TODELLAKAAN=,MIKSI ET=,HMM...KERROHAN JOTAKIN HALUISTASI
+2071 DATAH[IRITSEEK{POUND} ETTET=,VOITKO KUVITELLA MUUTA KUIN ETTET=,@
+2080 DATA MIKSI*MIKSEI
+2090 DATA MIT[ AJATTELET KYSYESS[SI TUOLLAISIA?
+2091 DATA SYV[LLISIIN KYSYMYKSIIN ON SYV[LLISET VASTAUKSET -JATKA,MIKSI YLEENS[ MIT[[N.
+2092 DATA NIIN TODELLAKIN -MIKSI=,OLET PERINPOHJAINEN LUONNE,@
+2100 DATA OLETKO
+2110 DATA MIKSI SINUA KIINOSTAA OLENKO VAI ENK{POUND} OLE=,OLISIKO PAREMPI  ETTEN OLISI=,@
+2120 DATA VIHA-
+2130 DATA VIHANTUNNE JUONTAA USEIN JUURENSA LAPSUUSTRAUMOISTA.
+2131 DATAVIHAAMINEN ON HY{POUND}DYT{POUND}NT[ ENERGIAN TUHLAUSTA.,VIHAATKO ITSE[SI?
+2132 DATAVIHAATKO SUKULAISIASI?,VIHAN VOI K[[NT[[ RAKKAUDEKSI.,@
+2140 DATA HUUTA-*NALKUT-*R[YH[-
+2150 DATA ON T[RKEINT[ ETT[ OSAA PURKAA TUNTEENSA,HMM...EHK[ HIEMAN EP[HIENOA K[YT{POUND}ST[
+2151 DATA SIIHEN ON VARMAAN OMAT SYYNS[...?,@
+2160 DATARYYP-*JOI-*JUO-*VIINA*ALKOHOLI-
+2170 DATAALKOHOLIN K[YTT{POUND} HAITTAA YST[VYYS SUHTEITA
+2171 DATAMITEN T[M[ LIITTYY MUIHIN ONGELMIISI?,PYSY SIN[ IRTI VIINASTA!
+2172 DATA MIKSI LUULET ETT[ IHMISET JUOVAT?,@
+2180 DATAPETT[-*USKOTON*VIERAISSA
+2190 DATAHAIRAHDUKSIA SATTUU JOSKUS MEILLE KAIKILLE
+2191 DATATEID[N OLISI SYYT[ KESKUSTELLA ONGELMISTANNE KESKEN[NNE
+2192 DATAMIST[ LUULET USKOTTOMUUDEN JOHTUVAN?,MIT[ TUNNETTE TOISIANNE KOHTAAN?,@
+2200 DATA PELK[-*PEL[N-
+2210 DATA OETKO KAUANKIN PEL[NNYT=,PELK[[TK{POUND} JUURI NYT=,PELKO TUNTUU KAHLITSEVAN SINUA.
+2211 DATAOLETKO YRITT[NYT VAPAUTUNUA PELOISTASI JOTENKIN?
+2212 DATATURHA HUOLESTUA PELK[[MINEN ON IHAN TAVALLISTA.,@
+2220 DATA USKON
+2230 DATA USKON ASIOISTA EI KANNATA KIISTELL[,...USKOT=,MIST[ USKOSI ON PER[ISIN
+2231 DATAKERROHAN JOTAIN RIPPI KOULUSTASI,MIT[ TUNSIT PASTORIASI KOHTAAN?,@
+2240 DATA MINUSTA TUNTUU*TUNNEN
+2250 DATA KERROHAN LIS[[ TUNTEMUKSISTASI,TUNTUUKOSINUSTA USEIN=,NAUTITKO TUNTEMUKSESTASI
+2251 DATAAIHEUTTAAKO SE SINULLE SYYLLISYYDENTUNTEITA?,TUNTEMINEN ON T[RKE[[,@
+2260 DATA RAKAST-
+2270 DATAEIK{POUND} TUO OLE HIUKAN PERVERSSI[?,TUNNETKO SEKSUAALISTA VETOA [ITIISI?
+2271 DATATAIDAT OLLA KOKENUTKIN RAKASTAJA.,MIT[ RAKASTELEMINEN TUO SINULLE MIELEEN?,@
+2280 DATAHALUA-*HIMO-
+2290 DATA MIT[ SINULLE MERKITSEE JOS SAISIT=,MIKSI HALUAT=
+2291 DATAOLETETAANPA ETT[ ET KOSKAAN SAISI=,MIN[KIN HALUAN JOSKUS=,@
+2300 DATAUNEKS-*KUVIT-*UNI*KUVITELMA*UNTA
+2310 DATAMIT[ UNESI TUO MIELEESI?,UNEKSITKO USEINKIN?,KET[ HAHMOJA UNESSASI ESIINTYY?
+2311 DATAH[IRITSEV[TK{POUND} UNESI SINUA?,HIENOA-UNET PARANTAVAT,@
+2320 DATAMIEHENI*AVIOMIEHENI*VAIMONI*NAARAANI
+2330 DATAMIKSI H[N=,MIT[ SINULLE MERKITSEE ETT[ H[N=,OLETKO PAHOILLASI ETT[ H[N=
+2331 DATAPETT[[K{POUND} H[N SINUA?,KUVAILISITKO HIUKAN TARKEMMIN SUHDETTANNE,@
+2360 DATAIS[-*[ITI-*MUTSI-*FAIJA-*VANHEM-
+2370 DATAKERROHAN LIS[[ PERHEEST[SI,MITEN SUHTUDUIT VANHEMPIISI MURROS I[SS[?
+2371 DATAMITEN VANHENPASI SUHTAUTUIVAT SINUUN?
+2372 DATAONGELMASI SAATTAA JOHTUA VANHEMPIESI V[LISEST[ SUHTEESTA -JATKA...,@
+2380 DATASISKO-*VELI-*VELJE-*SYSTERI-*BROIDI-
+2390 DATAVOITKO T[SMENT[[ AJATUKSIASI SISARUKSISTASI?
+2391 DATAKUINKA USEIN TAPAAT SISARUKSIASI?,MITEN SUKULAISET SUHTAUTUVAT T[H[N?,@
+2400 DATATYTT{POUND}YST[V[-*NAISE-
+2410 DATAKERROHAN JOSTAIN HAAVEESTASI,MIT[ TYTT{POUND}YST[V[ MERKITSEE SINULLE?
+2411 DATAMIT[ KUVITTELET JUURI NYT?,PIT[ISIK{POUND} TYTT{POUND} YST[V[SI MUISTUTTAA [ITI[SI?
+2412 DATAKUVAILE SUHDETTASI VASTAKKAISEEN SUKUPUOLEEN,@
+2420 DATA POIKAYST[V[-*MIESYST[V[-*MIEHE-
+2430 DATAKUVAILISITKO TARKEMMIN TOIVEITASI,MIT[ POIKAYST[V[ MERKITSEE SINULLE?
+2431 DATAMIT[ KUVITTELET JUURI NYT?,PIT[ISIK{POUND} POIKAYST[V[SI MUISTUTTAA IS[[SI?
+2432 DATAKUVAILE SUHDETTASI VASTAKKAISEEN SUKUPUOLEEN,@
+2440 DATAYST[V-
+2450 DATA HALUAT EHK[ KESKUSTELLA YST[VIST[SI?
+2451 DATAOLET EHK[ ETSIYTYNYT V[[R[NLAISTEN IHMISTEN PARIIN.
+2452 DATAKERROHAN MIT[ TUNNET YST[VI[SI KOHTAAN.
+2453 DATATUO ON HYVIN TAVALLINEN HARHAK[SITYS JA SE JOHTUU LIBIDON HARHAUMASTA.
+2455 DATA SINULLA ON LIIAN IDEAALINEN KUVA YST[VYYDEST[.,@
+2460 DATASUKU-
+2470 DATAMIT[ AJATTELET SUKULAISISTASI?,KERROHAN JOTAKIN LAPSUUDENMUISTOJASI.
+2471 DATAOLEN SAMAA MIELT[ KANSSASI.,TIED[N -MINULLAKIN IN SUKULAISIA.
+2472 DATAPUHUTAAN V[LILL[ JOSTAKIN MUUSTA.,@
+2480 DATATIETOKONE-*KONE
+2490 DATAHULESTUTTAAKO TIETOKONEET SINUA?,PELK[[TK{POUND} TIETOKONEEN ORJUUTTAVAN IHMISI[?
+2491 DATAPELOTTAVATKO KONEET SINUA?,MIKSI MAINITSIT KONEET
+2492 DATAMIT[ TEKEMIST[ KONEILLA ON ONGELMASI KANSSA?,@
+2500 DATAEN VOI*EN OSAA
+2510 DATAMIST[ TIED[T ETTET OSAA=,ONKO T[SS[ JOTAKIN SYVEMP[[KIN MERKITYST[?
+2511 DATAEHK[ NYT OSAAT=,YRITT[NYTT[ EI LAITETA,MIT[ OIKEIN HALUAT ILMAISTA?,@
+2520 DATA OLEN*MIN[ OLEN*OLIN*MIN[ OLIN
+2530 DATATAISIT TULLA T[NNE KOSKA OLET=,KUINKA KAUAN OLET OLLUT=
+2531 DATASYYLLISYYDEN TUNTEET JA PELOT SAATTAVAT KALVAA PAHASTI
+2532 DATAONKO SINUSTA NORMAALIA OLLA=,MIT[ VANHEMPASI SANOISIVAT SIIHEN ETT[ OLET=,@
+2540 DATASIN[
+2550 DATAKESKUSTELIMME SINUSTA EMMEK[ MINUSTA,MIN[K{POUND}=,ETH[N VAIN PUHU MINUSTA?,@
+2560 DATA MIT[
+2570 DATAMIKSI KYSYT?,KIINOSTAAKO TUO KYSYMYS SINUA?,MIK[ VASTAUS OLISI MIELLYTT[VIN?
+2571 DATA,MIT[ LUULET?,KERROHAN JOTAKIN NYT MIT[ TULEE MIELEESI,@
+2580 DATAKUINKA*MIST[
+2590 DATAAJATTELETKO ESEINKIN TUOLLAISIA KYSYMYKSI[?,MIT[ SIN[ OIKEASTAAN HALUAT TIET[[?
+2591 DATAOLETKO KYSYNYT KELT[[N MUULTA?,OLETKO KYSYNYT SELLAISIA AIKAISEMMINKIN?
+2592 DATAMIT[ TULEE MIELEESI KYSYESS[SI TUOLLAISIA?,@
+2600 DATAKUKA
+2610 DATA NIMET EIV[T KIINOSTA MINUA.,EN V[LIT[ MIST[[N NIMIST[ -JATKA.,@
+2620 DATA ANTEEKSI*OLEN PAHOILLANI
+2630 DATA[L[ TURHAAN PYYTELE ANTEEKSI.,MIKSI OLET NIIN VAATIMATON?
+2631 DATAMIT[ TUNTEMUKSIA SINULLA ON PYYT[ESS[SI ANTEEKSI?,[L[ OLE NIIN PUOLUSTELEVA.
+2632 DATAMILT[ SE TUNTUU?,@
+2640 DATAEHK[*EHK[P[*KENTIES*MELKO
+2650 DATAET VAIKUTA KOVIN VARMALTA.,MIKSI TUOLLAINEN S[VY?,ETK{POUND} VOISI OLLA VARMEMPI.
+2651 DATAETK{POUND} OLE VARMA?,ETK{POUND} TIED[?,@
+2660 DATA EI
+2670 DATA ASENNOIDUT HIUKAN KIELTEISESTI.,MIKSI MUUTEN EI?,MIN[ EN OLISI YHT[ VARMA.
+2671 DATA VOISIT KOITTAA SUHTAUTUA HIUKAN MY{POUND}NTEISEMMIN.,TOTUUS ON TARUA IHMEELISEMP[[,@
+2680 DATA AINA*JOSKUS*USEIN
+2690 DATA VOITKO HIUKAN T[SMENT[[.,MILLOIN?,MIT[ AJAT TAKAA?,IHAN AINAKO?
+2691 DATA KAIKKI EI JOSKUS SUJU NIIN KUIN PIT[ISI.,@
+2700 DATA MINUN MIELEST[NI*MIELEST[NI
+2710 DATA OLETKO TOSISSASI SIT[ MIELT[,MIELIPITEET EROTTAVAT IHMISEN EL[IMIST[ -JATKA.
+2711 DATA EP[ILETK{POUND} ETT[=,SINULLA ON JYRKKI[ MIELIPITEIT[.,@
+2720 DATA SAMANLAI-*SAMANKALTAI-
+2730 DATA MILL[ TAPAA?,MIT[ YHTEIST[ HAVAITSET?,MIT[ SAMANLAISUUS TUO MIELEESI?
+2731 DATA MIT[ MUITA YHTEYKSI[ HUOMAAT?,TOKKOPA TUOLLAISIA YHTEYKSI[ ONKAAN.,@
+2740 DATA KYLL[*JOO*JEP*TIETENKIN
+2750 DATA VAIKUTAT AIKA EL[M[NMY{POUND}NTEISELT[.,OLETKO AIVAN VARMA ETT[...=,YMM[RR[N.
+2751 DATA ...AHAA!,HMM...ALKAA SELVET[.,@
+2760 DATAL
+3000 FORI=1TOAM:PRINT"AVAIN "I:FORJ=1TOSM:PRINTSN$(I,J)"/";:NEXT:PRINT
+3001 PRINT"{=*21}":PRINT"LAUSE*POINTERI="LM$(I,0):PRINT
+3010 FORJ=1TOLM:PRINTJ".."LM$(I,J):NEXT:PRINT:GETR$:NEXT
